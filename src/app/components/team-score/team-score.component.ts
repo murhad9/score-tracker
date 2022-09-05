@@ -7,7 +7,7 @@ import { Player } from 'src/app/interfaces/player';
   styleUrls: ['./team-score.component.css']
 })
 export class TeamScoreComponent implements OnInit {
-  @Input() players: Player[];
+  @Input() team: Player[];
 
   constructor() {}
 
