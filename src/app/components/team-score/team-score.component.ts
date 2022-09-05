@@ -15,4 +15,20 @@ export class TeamScoreComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public calculateScore(): number {
+    return this.team.reduce((sum, player) => {
+      return sum + player.score;
+    }, 0);
+  }
+
+  public updatePoints(index: number, points: number): void {
+      this.team[index].score += points;
+  }
+
+  public addPlayer(): void {
+    if (this.team.length < 4 ) {
+      this.team.push( { name: 'Player ' + (this.team.length + 1), score: 0});
+    }
+  }
+
 }

@@ -1,19 +1,27 @@
 <div id="container">
-    <h2 fxLayoutAlign="center"> Team 1</h2>
-    <div class="team" fxLayout="row wrap" fxLayoutGap="60px" fxLayoutAlign="center center">
-        <div *ngFor="let player of team">
+    <div id="header" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <h2> Team 1</h2>
+        <button mat-icon-button (click)="addPlayer()">
+            <mat-icon>add</mat-icon>
+        </button>
+        <button mat-icon-button>
+            <mat-icon>delete</mat-icon>
+        </button>
+    </div>
+    <div class="team" fxLayout="row wrap" fxLayoutGap="60px">
+        <div *ngFor="let player of team; let indexOfArray=index;">
             <div fxLayout="column" fxLayoutAlign="center center">
                 <p>{{player.name}}</p>
-                <button mat-icon-button>
+                <button mat-icon-button (click)="updatePoints(indexOfArray, 10)">
                     <mat-icon>keyboard_arrow_up</mat-icon>
                 </button>
                 <p>{{player.score}}</p>
-                <button mat-icon-button>
+                <button mat-icon-button  (click)="updatePoints(indexOfArray, -10)">
                     <mat-icon>keyboard_arrow_down</mat-icon>
                 </button>
             </div>
         </div>
-        <p> Team score: </p>
     </div>
+    <p style="margin-left: 10px"> Team score: {{calculateScore()}} </p>
 </div>
 
