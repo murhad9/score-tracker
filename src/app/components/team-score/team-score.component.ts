@@ -13,8 +13,6 @@ export class TeamScoreComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log('ici', this.team);
-
   }
 
 }

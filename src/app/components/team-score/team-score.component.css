@@ -1,0 +1,9 @@
+#container {
+    border: 1px solid black;
+    width: 250px;
+    height: max-content;
+}
+
+.team {
+    margin-left: 15px;
+}

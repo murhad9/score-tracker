@@ -1,6 +1,19 @@
-<div class="container">
-    <div *ngFor="let player of team">
-        {{player.name}}
+<div id="container">
+    <h2 fxLayoutAlign="center"> Team 1</h2>
+    <div class="team" fxLayout="row wrap" fxLayoutGap="60px" fxLayoutAlign="center center">
+        <div *ngFor="let player of team">
+            <div fxLayout="column" fxLayoutAlign="center center">
+                <p>{{player.name}}</p>
+                <button mat-icon-button>
+                    <mat-icon>keyboard_arrow_up</mat-icon>
+                </button>
+                <p>{{player.score}}</p>
+                <button mat-icon-button>
+                    <mat-icon>keyboard_arrow_down</mat-icon>
+                </button>
+            </div>
+        </div>
+        <p> Team score: </p>
     </div>
 </div>
 
