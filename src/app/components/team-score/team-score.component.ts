@@ -9,9 +9,12 @@ import { Player } from 'src/app/interfaces/player';
 export class TeamScoreComponent implements OnInit {
   @Input() team: Player[];
 
-  constructor() {}
+  constructor() {
+  }
 
   ngOnInit(): void {
+    console.log('ici', this.team);
+
   }
 
 }

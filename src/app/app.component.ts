@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Player } from './interfaces/player';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
+  defaultTeam: Player[] = [{ name: 'Player 1', score: 0}];
 }
