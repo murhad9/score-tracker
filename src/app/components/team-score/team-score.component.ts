@@ -9,6 +9,7 @@ import { Player } from 'src/app/interfaces/player';
 export class TeamScoreComponent implements OnInit {
   @Input() team: Player[];
   @Input() teamName = 'Team';
+  totalScore = 0;
 
   constructor() {
   }
@@ -24,12 +25,22 @@ export class TeamScoreComponent implements OnInit {
 
   public updatePoints(index: number, points: number): void {
       this.team[index].score += points;
+      this.totalScore += points;
   }
 
   public addPlayer(): void {
     if (this.team.length < 4 ) {
-      this.team.push( { name: 'Player ' + (this.team.length + 1), score: 0});
+      const player =  { id: Math.random(), name: 'Player ' + (this.team.length + 1), score: 0};
+      this.team.push(player);
+      console.log(player.id);
     }
   }
+
+  public deletePlayer(index: number, playerToRemove: Player): void {
+    this.team.find(player => player.id === playerToRemove.id);
+    this.team.splice(index, 1);
+    this.totalScore -= playerToRemove.score;
+  }
+
 
 }

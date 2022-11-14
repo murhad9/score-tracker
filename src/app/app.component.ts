@@ -9,7 +9,10 @@ import { Player } from './interfaces/player';
 
 export class AppComponent {
   defaultTeam: Player[] = [
-    { name: 'Player 1', score: 0},
+    { id: Math.random(), name: 'Player 1', score: 0},
+  ];
+  defaultTeam2: Player[] = [
+    { id: Math.random(), name: 'Player 1', score: 0},
   ];
 
   firstTeam = 'Team 1';
