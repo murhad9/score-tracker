@@ -8,6 +8,7 @@ import { Player } from 'src/app/interfaces/player';
 })
 export class TeamScoreComponent implements OnInit {
   @Input() team: Player[];
+  @Input() teamName = 'Team';
 
   constructor() {
   }

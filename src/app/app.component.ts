@@ -12,7 +12,6 @@ export class AppComponent {
     { name: 'Player 1', score: 0},
   ];
 
-  defaultTeam2: Player[] = [
-    { name: 'Player 1', score: 0},
-  ];
+  firstTeam = 'Team 1';
+  secondTeam = 'Team 2';
 }
