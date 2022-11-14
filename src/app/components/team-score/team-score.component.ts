@@ -29,11 +29,8 @@ export class TeamScoreComponent implements OnInit {
   }
 
   public addPlayer(): void {
-    if (this.team.length < 4 ) {
-      const player =  { id: Math.random(), name: 'Player ' + (this.team.length + 1), score: 0};
-      this.team.push(player);
-      console.log(player.id);
-    }
+    const player =  { id: Math.random(), name: 'Player ' + (this.team.length + 1), score: 0};
+    this.team.push(player);
   }
 
   public deletePlayer(index: number, playerToRemove: Player): void {
@@ -41,6 +38,5 @@ export class TeamScoreComponent implements OnInit {
     this.team.splice(index, 1);
     this.totalScore -= playerToRemove.score;
   }
-
 
 }
