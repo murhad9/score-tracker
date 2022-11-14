@@ -1,8 +1,12 @@
 #container {
-    width: 250px;
+    width: 400px;
     height: max-content;
 }
 
 .team {
-    margin-left: 16px;
+    margin-left: 15px;
 }
+
+mat-form-field.mat-form-field {
+    font-size: 1px;
+  }

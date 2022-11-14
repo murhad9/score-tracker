@@ -8,10 +8,12 @@
             <mat-icon>delete</mat-icon>
         </button>
     </div>
-    <div class="team" fxLayout="row wrap" fxLayoutGap="60px">
+    <div class="team" fxLayout="row wrap" fxLayoutGap="10px">
         <div *ngFor="let player of team; let indexOfArray=index;">
-            <div fxLayout="column" fxLayoutAlign="center center">
-                <p>{{player.name}}</p>
+            <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+                <mat-form-field>
+                    <input style="text-align:center;" matInput [(ngModel)]="player.name" [value]="player.name">
+                  </mat-form-field>
                 <button mat-icon-button (click)="updatePoints(indexOfArray, 10)">
                     <mat-icon>keyboard_arrow_up</mat-icon>
                 </button>
@@ -22,6 +24,6 @@
             </div>
         </div>
     </div>
-    <p style="margin-left: 10px"> Team score: {{calculateScore()}} </p>
+    <p style="margin-left: 15px"> Team score: {{calculateScore()}} </p>
 </div>
 

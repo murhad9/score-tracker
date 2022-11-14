@@ -11,4 +11,8 @@ export class AppComponent {
   defaultTeam: Player[] = [
     { name: 'Player 1', score: 0},
   ];
+
+  defaultTeam2: Player[] = [
+    { name: 'Player 1', score: 0},
+  ];
 }
