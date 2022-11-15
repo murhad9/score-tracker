@@ -17,4 +17,5 @@ export class AppComponent {
 
   firstTeam = 'Team 1';
   secondTeam = 'Team 2';
+
 }
