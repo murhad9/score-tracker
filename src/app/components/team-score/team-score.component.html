@@ -14,16 +14,18 @@
                         <mat-icon>delete</mat-icon>
                     </button>
                   </mat-form-field>
-                <button mat-icon-button (click)="updatePoints(indexOfArray, 10)">
-                    <mat-icon>keyboard_arrow_up</mat-icon>
-                </button>
-                <p>{{player.score}}</p>
-                <button mat-icon-button  (click)="updatePoints(indexOfArray, -10)">
-                    <mat-icon>keyboard_arrow_down</mat-icon>
-                </button>
+                <div fxLayout="column" fxLayoutAlign="center center">
+                    <button mat-icon-button (click)="updatePoints(indexOfArray, 10)">
+                        <mat-icon>keyboard_arrow_up</mat-icon>
+                    </button>
+                    <p>{{player.score}}</p>
+                    <button mat-icon-button  (click)="updatePoints(indexOfArray, -10)">
+                        <mat-icon>keyboard_arrow_down</mat-icon>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
-    <p style=" text-align: center;"> Team score: {{calculateScore()}} </p>
+    <p *ngIf="team.length > 0" style=" text-align: center;"> Team score: {{calculateScore()}} </p>
 </div>
 

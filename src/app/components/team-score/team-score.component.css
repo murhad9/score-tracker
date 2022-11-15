@@ -1,6 +1,7 @@
 #container {
     width: 500px;
     height: max-content;
+
 }
 
 .team {
@@ -10,3 +11,4 @@
 mat-form-field.mat-form-field {
     font-size: 1px;
   }
+
