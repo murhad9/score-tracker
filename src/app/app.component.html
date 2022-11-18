@@ -2,8 +2,8 @@
     <div fxLayout="column" fxLayoutAlign="center center" >
         <h1>Score-tracker</h1>
         <div fxLayout="row" fxLayoutGap="10px">
-            <button mat-raised-button color="primary" >Reset scores</button>
-            <button mat-raised-button color="warn" (click)="finishGame()">End game</button>
+            <button mat-raised-button color="primary" (click)="scoreReset.resetScores()">Reset scores</button>
+            <button mat-raised-button color="warn" (click)="scoreReset.finishGame()">End game</button>
         </div>
     </div>
     <app-team-score style="float: left" [team]="defaultTeam" [teamName]="firstTeam"></app-team-score>

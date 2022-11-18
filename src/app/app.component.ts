@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { Player } from './interfaces/player';
-import {MatDialog, MatDialogRef} from '@angular/material/dialog';
+import {MatDialog} from '@angular/material/dialog';
 import { ConfirmModalComponent } from './components/confirm-modal/confirm-modal.component';
+import { ScoreResetService } from './services/score-reset.service';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,10 @@ import { ConfirmModalComponent } from './components/confirm-modal/confirm-modal.
 
 export class AppComponent {
 
-  constructor(public dialog: MatDialog) {
+  constructor(
+    public dialog: MatDialog,
+    public scoreReset: ScoreResetService
+    ) {
 
   }
   defaultTeam: Player[] = [
@@ -24,18 +28,6 @@ export class AppComponent {
   firstTeam = 'Team 1';
   secondTeam = 'Team 2';
 
-  public finishGame(): void {
-    const dialogRef = this.dialog.open(ConfirmModalComponent, {
-     data: {
-      title : 'End game ?',
-    }
-    });
 
-    dialogRef.afterClosed().subscribe(result => {
-      if (result === 'yes') {
-        console.log('lol');
-      }
-    });
-  }
 
 }

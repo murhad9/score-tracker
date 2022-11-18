@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Player } from 'src/app/interfaces/player';
+import { ScoreResetService } from 'src/app/services/score-reset.service';
 
 @Component({
   selector: 'app-team-score',
@@ -11,7 +12,14 @@ export class TeamScoreComponent implements OnInit {
   @Input() teamName = 'Team';
   totalScore = 0;
 
-  constructor() {
+  constructor(public scoreReset: ScoreResetService) {
+    this.scoreReset.resetScoreObj$.subscribe( () => {
+      this.team.forEach( player => {
+        player.score = 0;
+      });
+      this.totalScore = 0;
+  });
+
   }
 
   ngOnInit(): void {
