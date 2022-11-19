@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Player } from './interfaces/player';
 import {MatDialog} from '@angular/material/dialog';
-import { ConfirmModalComponent } from './components/confirm-modal/confirm-modal.component';
 import { ScoreResetService } from './services/score-reset.service';
+import { TITLE_END_GAME, TITLE_RESET_SCORE } from './constants';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +11,9 @@ import { ScoreResetService } from './services/score-reset.service';
 })
 
 export class AppComponent {
+
+  readonly END_GAME = TITLE_END_GAME;
+  readonly RESET_SCORE = TITLE_RESET_SCORE;
 
   constructor(
     public dialog: MatDialog,

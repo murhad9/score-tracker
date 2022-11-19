@@ -14,9 +14,9 @@ export class ScoreResetService {
     this.resetScoreObj$ = this.resetScoreSubject.asObservable();
    }
 
-   public finishGame(): void {
+   public endGame(modalTitle: string): void {
     const dialogRef = this.dialog.open(ConfirmModalComponent, {
-      data: {title : 'End game ?'}
+      data: {title : modalTitle}
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -26,17 +26,4 @@ export class ScoreResetService {
       }
     });
   }
-
-  public resetScores(): void {
-    const dialogRef = this.dialog.open(ConfirmModalComponent, {
-      data: {title : 'Reset scores ?'}
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      if (result === 'yes') {
-        this.resetScoreSubject.next();
-      }
-    });
-  }
-
 }
