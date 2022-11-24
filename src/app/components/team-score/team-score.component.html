@@ -11,7 +11,7 @@
                 <mat-form-field>
                     <input style="text-align:center;" matInput [(ngModel)]="player.name" [value]="player.name">
                     <button mat-icon-button matTooltip="Delete player" (click)="deletePlayer(indexOfArray, player)">
-                        <mat-icon>delete</mat-icon>
+                        <mat-icon class="deleteIcon" >delete</mat-icon>
                     </button>
                   </mat-form-field>
                 <div fxLayout="column" fxLayoutAlign="center center">

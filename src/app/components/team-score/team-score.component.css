@@ -12,3 +12,6 @@ mat-form-field.mat-form-field {
     font-size: 1px;
   }
 
+.deleteIcon {
+    color:red;
+}

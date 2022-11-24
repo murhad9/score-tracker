@@ -6,6 +6,8 @@
             <button mat-raised-button color="warn" (click)="scoreReset.endGame(END_GAME)">End game</button>
         </div>
     </div>
-    <app-team-score style="float: left" [team]="defaultTeam" [teamName]="firstTeam"></app-team-score>
-    <app-team-score style="float: right" [team]="defaultTeam2" [teamName]="secondTeam"></app-team-score>
+    <div fxLayout="row" fxLayoutAlign="space-between">
+        <app-team-score [team]="defaultTeam" [teamName]="firstTeam"></app-team-score>
+        <app-team-score [team]="defaultTeam2" [teamName]="secondTeam"></app-team-score>
+    </div>
 </div>
