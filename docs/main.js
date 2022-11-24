@@ -123,7 +123,6 @@ class AppComponent {
         this.scoreReset = scoreReset;
         this.END_GAME = _constants__WEBPACK_IMPORTED_MODULE_0__["TITLE_END_GAME"];
         this.RESET_SCORE = _constants__WEBPACK_IMPORTED_MODULE_0__["TITLE_RESET_SCORE"];
-        this.innerWidth = window.innerWidth;
         this.teamLayout = 'row';
         this.defaultTeam = [
             { id: Math.random(), name: 'Player 1', score: 0 },
@@ -135,43 +134,35 @@ class AppComponent {
         this.secondTeam = 'Team 2';
     }
     onResize() {
-        this.innerWidth = window.innerWidth;
-        console.log(window.innerWidth);
         this.teamLayout = window.innerWidth < _constants__WEBPACK_IMPORTED_MODULE_0__["PAGE_WIDTH"] ? 'column' : 'row';
-        console.log(this.teamLayout);
     }
 }
 AppComponent.ɵfac = function AppComponent_Factory(t) { return new (t || AppComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialog"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_services_score_reset_service__WEBPACK_IMPORTED_MODULE_3__["ScoreResetService"])); };
 AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: AppComponent, selectors: [["app-root"]], hostBindings: function AppComponent_HostBindings(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("resize", function AppComponent_resize_HostBindingHandler($event) { return ctx.onResize($event); }, false, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵresolveWindow"]);
-    } }, decls: 14, vars: 6, consts: [[1, "score-container"], ["fxLayout", "column", "fxLayoutAlign", "center center"], ["fxLayout", "row", "fxLayoutGap", "10px"], ["mat-raised-button", "", "color", "primary", 3, "click"], ["mat-raised-button", "", "color", "warn", 3, "click"], ["fxLayoutAlign", "space-between", 3, "fxLayout"], [3, "team", "teamName"]], template: function AppComponent_Template(rf, ctx) { if (rf & 1) {
+    } }, decls: 12, vars: 5, consts: [[1, "score-container"], ["fxLayout", "column", "fxLayoutAlign", "center center"], ["fxLayout", "row", "fxLayoutGap", "10px"], ["mat-raised-button", "", "color", "primary", 3, "click"], ["mat-raised-button", "", "color", "warn", 3, "click"], ["fxLayoutAlign", "space-between", 3, "fxLayout"], [3, "team", "teamName"]], template: function AppComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "div", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "h1");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](3, "Score-tracker");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "div", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](4, "h1");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](5, "Score-tracker");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](4, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "button", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function AppComponent_Template_button_click_5_listener() { return ctx.scoreReset.endGame(ctx.RESET_SCORE); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](6, "Reset scores");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](6, "div", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "button", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function AppComponent_Template_button_click_7_listener() { return ctx.scoreReset.endGame(ctx.RESET_SCORE); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](8, "Reset scores");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](9, "button", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function AppComponent_Template_button_click_9_listener() { return ctx.scoreReset.endGame(ctx.END_GAME); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](10, "End game");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "button", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function AppComponent_Template_button_click_7_listener() { return ctx.scoreReset.endGame(ctx.END_GAME); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](8, "End game");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](11, "div", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](12, "app-team-score", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](13, "app-team-score", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](9, "div", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](10, "app-team-score", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](11, "app-team-score", 6);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", ctx.innerWidth, " ");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](9);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("fxLayout", ctx.teamLayout);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
