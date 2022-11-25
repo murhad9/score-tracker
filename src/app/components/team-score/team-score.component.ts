@@ -33,14 +33,17 @@ export class TeamScoreComponent implements OnInit {
 
   public updatePoints(index: number, points: number): void {
     let scoreCounter = 0;
-    const addPoint = points > 0 ? 1 : -1;
+    const ADD_POINT = points > 0 ? 1 : -1;
+    const MAX_POINTS = 10;
+    const INTERVAL = 30;
+
     const scorePoints = window.setInterval(() => {
       scoreCounter++;
-      this.team[index].score += addPoint;
-      if (scoreCounter === 10) {
+      this.team[index].score += ADD_POINT;
+      if (scoreCounter === MAX_POINTS) {
         clearInterval(scorePoints);
       }
-    }, 30);
+    }, INTERVAL);
   }
 
   public addPlayer(): void {
