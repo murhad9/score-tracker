@@ -1,12 +1,23 @@
+import { trigger, transition, query, style, stagger, animate } from '@angular/animations';
 import { Component, Input, OnInit } from '@angular/core';
 import { Player } from 'src/app/interfaces/player';
 import { ScoreResetService } from 'src/app/services/score-reset.service';
 
+const listAnimation = trigger('listAnimation', [
+  transition('* <=> *', [
+      query(':enter', [style({ opacity: 0 }), stagger('300ms', animate('1000ms ease-out', style({ opacity: 1 })))], { optional: true }),
+  ]),
+]);
+
 @Component({
   selector: 'app-team-score',
   templateUrl: './team-score.component.html',
-  styleUrls: ['./team-score.component.css']
+  styleUrls: ['./team-score.component.css'],
+  animations: [listAnimation],
 })
+
+
+
 export class TeamScoreComponent implements OnInit {
   @Input() team: Player[];
   @Input() teamName = 'Team';
@@ -33,7 +44,7 @@ export class TeamScoreComponent implements OnInit {
 
   public updatePoints(index: number, points: number): void {
     let scoreCounter = 0;
-    const ADD_POINT = points > 0 ? 1 : -1;
+    const ADD_POINT = points > 0 ? 1 : -1; // Increment or decrement score
     const MAX_POINTS = 10;
     const INTERVAL = 30;
 
